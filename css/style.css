@@ -1,0 +1,556 @@
+body {
+  background-image: url("../img/BG.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: relative;
+}
+
+header img {
+  width: 100%;
+}
+
+.guide-button {
+  position: absolute;
+  border: 0;
+  outline: none;
+  background: none;
+  width: 10vw;
+  height: 20px;
+  top: 47%;
+  padding: 0;
+  right: 0;
+  z-index: 999;
+}
+.guide-button img {
+  width: 100%;
+}
+
+/* ---- Modal UI ---- */
+
+#modal {
+  /* padding: 3rem;
+      position: absolute;
+      top: 25%;
+      left: 20%;
+      max-width: 210px; */
+  /* background: url('assets/HTP\ BG.png');
+      background-size: cover;
+      background-repeat: no-repeat; */
+  border: 0;
+  background: transparent;
+  width: 100%;
+  margin: auto;
+}
+
+.close {
+  right: 45%;
+  background: none;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  width: 13vw;
+  bottom: 0;
+}
+.close img {
+  width: 100%;
+}
+
+::backdrop {
+  background-color: #232323;
+  opacity: 0.75;
+}
+
+.howToPlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("/img/Guide\ box.png");
+  background-size: 100% 100%;
+  min-height: 80vh;
+  justify-content: center;
+  background-repeat: no-repeat;
+  /* gap: 16px; */
+}
+.howToPlay img {
+  width: 50%;
+}
+.howToPlay ul {
+  max-width: 55vw;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #fff;
+  padding-inline: 0;
+}
+ul li {
+  padding: 1vh 0;
+  list-style: none;
+  font-size: 3.5vw;
+}
+
+/* ----- Modal UI ends ----- */
+
+/* ----Tab btns--- */
+
+button {
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+.tab-btns,
+.tab-btns-leaderboard {
+  background-image: url("/img/user.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 70%;
+  height: 12vw;
+  margin: auto;
+  display: flex;
+}
+
+.tab,
+.tab2,
+.tab3 {
+  width: 52%;
+  /* height: 110%; */
+  transform: scale(1.1);
+  margin-top: -1px;
+}
+
+.talent.active,
+.talentl.active {
+  background-image: url("/img/Talent-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+}
+.user.active,
+.userl.active {
+  background-image: url("/img/user-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+}
+
+/* --- Round-btns --- */
+
+.round-btns,
+.reward-round-btns,
+.schedule-round-btns,
+.leaderboard-round-btns {
+  display: flex;
+  justify-content: center;
+  gap: 21vw;
+  /* padding-inline: 32px;
+    padding-top: 24px; */
+}
+.round-btns button,
+.reward-round-btns button,
+.schedule-round-btns button,
+.leaderboard-round-btns button {
+  height: 14vw;
+  font-size: 4.5vw;
+  font-weight: 900;
+  color: #fff;
+}
+.round-1,
+.round-2 {
+  width: 35%;
+}
+.round-1 {
+  background-image: url("/img/Round1Unselected.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.round-1.active {
+  background-image: url("/img/Round1Selected.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.round-2 {
+  background-image: url("/img/Round2Unselected.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.round-2.active {
+  background-image: url("/img/Round2Selected.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* ----Rewards section---- */
+
+.tab-content,
+.tab-schedule-content {
+  display: none;
+  position: relative;
+}
+
+.tab-content.active {
+  display: flex;
+  justify-content: flex-start;
+  max-height: 100vw;
+  height: 70vh;
+  margin: 2vw;
+  flex-direction: column;
+}
+.reward-tag {
+  width: 50%;
+  position: absolute;
+  top: 0;
+}
+.reward-tag img {
+  width: 100%;
+}
+.rewards {
+  background-image: url("/img/Rewards-Frame.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  width: 85%;
+  justify-content: space-between;
+  padding: 0 8vw;
+  position: relative;
+  min-height: 60vh;
+  margin-top: 20px;
+}
+.arrow {
+  max-width: 10vw;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+.arrow.left {
+  left: 15vw;
+}
+.arrow.right {
+  right: 18vw;
+}
+.arrow img {
+  width: 100%;
+}
+
+.prizes,
+.prizes-1,
+.prizesR1,
+.prizesR2 {
+  display: none;
+  gap: 8px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prizes.active,
+.prizes-1.active,
+.prizesR1.active,
+.prizesR2.active {
+  display: flex;
+}
+.stage {
+  width: 30vw;
+  margin-top: 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stage1 {
+  flex-direction: row;
+  width: 23vw;
+  justify-content: center;
+}
+.stage2 {
+  width: 17vw;
+}
+.stage img {
+  width: 100%;
+}
+.stage span {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: 600;
+  min-width: 115px;
+  color: goldenrod;
+}
+.reward-top {
+  position: absolute;
+  top: 18vw;
+  width: 28vw;
+  right: 36%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4vw;
+}
+.reward-top img {
+  width: 100%;
+  position: absolute;
+  right: 0;
+}
+.reward-top span {
+  z-index: 1;
+  font-size: 4.5vw;
+  color: #fff;
+  font-weight: 600;
+}
+.reward-text {
+  font-weight: 600;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 48vw;
+}
+
+.tab-btns-schedule {
+  background: url("./assets/img/Category btn bg.png") center/100% 100% no-repeat;
+  width: 85%;
+  height: 50px;
+  margin: auto;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+}
+.talent-rewards {
+  display: none;
+}
+.talent-rewards.active {
+  display: flex;
+}
+
+.tab1 {
+  width: 25%;
+  height: 50px;
+  margin-top: 4px;
+}
+.dancing.active {
+  background: url("./assets/img/btn/Dance btn.png") center/100% 100% no-repeat;
+
+  transform: scale(1.2);
+}
+.singing.active {
+  background: url("./assets/img/btn/Singing battle btn.png") center/100% 100%
+    no-repeat;
+  transform: scale(1.2);
+}
+.fashion.active {
+  background: url("./assets/img/btn/fashion battle btn.png") center/100% 100%
+    no-repeat;
+  transform: scale(1.2);
+}
+
+/* -----Schedule section styling----- */
+
+.schedule-table {
+  margin-top: 8vw;
+}
+
+.tab-btns-schedule {
+  background: url("/img/Category-btn-bg.png") center/100% 100% no-repeat;
+  width: 90%;
+  height: 12vw;
+  margin: auto;
+  margin-top: 4vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+  margin-bottom: 3vw;
+}
+
+.dancing.active {
+  background: url("../img/Dance-Battle.png") center/100% 100% no-repeat;
+  transform: scale(1.3);
+}
+.singing.active {
+  background: url("../img/Singing-Battle.png") center/100% 100% no-repeat;
+  transform: scale(1.3);
+}
+.fashion.active {
+  background: url("../img/Fashion-Battle.png") center/100% 100% no-repeat;
+  transform: scale(1.3);
+}
+
+.schedule-bg {
+  display: none;
+  background: url("../img/Schedule-Frame.png") center/100% 100% no-repeat;
+  /* height: 50vh;
+  max-height: 400px; */
+}
+.schedule-bg.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1vw;
+  padding-top: 20vw;
+  padding-bottom: 15vw;
+}
+.talent-rewards2 {
+  display: none;
+}
+.talent-rewards2.active {
+  display: block;
+}
+
+.row {
+  background: url(../img/4th\ name\ onwards\ strip.png) center/100% 100%
+    no-repeat;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  color: goldenrod;
+  justify-content: center;
+  padding: 1vw;
+}
+.vs {
+  max-width: 5vw;
+}
+.vs img {
+  width: 100%;
+}
+/* .player-datas{
+  font-size: 2.5vw;
+}
+.player-datas p{
+  font-size: 2.5vw;
+  margin: 0;
+}
+.player-datas a{
+  text-decoration: none;
+  color: gold;
+} */
+
+#table-data {
+  display: grid;
+  grid-template-columns: 17% 31% auto 31% 14%;
+  font-size: 2vw;
+  margin: 0vw auto;
+  background-image: url(../img/4th\ name\ onwards\ strip.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-items: center;
+  padding-top: 1vw;
+  font-weight: bold;
+  color: goldenrod;
+  margin-top: 0vw;
+  width: 70%;
+  padding-bottom: 2vw;
+}
+
+#table-data a {
+  text-decoration: none;
+  color: goldenrod;
+}
+.date {
+  margin: 0vw auto;
+  width: 100%;
+  font-size: 2vw;
+  text-align: center;
+}
+
+/* ---- Leaderboard section ---- */
+
+.leaderboard-section {
+  padding: 5vw 0;
+}
+.leaderboard-content {
+  padding-top: 4vw;
+}
+.leaderboard-content-user,
+.leaderboard-content-talent {
+  display: none;
+}
+.leaderboard-content-user.active,
+.leaderboard-content-talent.active {
+  display: block;
+}
+
+.leaderboard {
+  display: none;
+}
+
+.leaderboard.active {
+  background: url("../img/Leaderboard\ box.png") center/100% 100% no-repeat;
+  min-height: 88vh;
+  width: 95%;
+  margin: auto;
+  margin-top: 30px;
+  position: relative;
+  display: block;
+}
+
+.beans-amount {
+  max-width: 50%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15vw;
+}
+.beans-amount img {
+  width: 100%;
+}
+.beans-amount span {
+  position: absolute;
+  color: #fff;
+  margin-left: 6vw;
+  font-size: 5vw;
+  font-weight: 600;
+}
+
+.topper-container {
+  display: flex;
+  width: 68%;
+  gap: 1vw;
+  margin: auto;
+  margin-top: 10px;
+  background: url(../img/rank\ bg.png) center/100% 100% no-repeat;
+  padding: 2vw;
+}
+.topper-container .top {
+  height: 26vw;
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  color: #fff;
+  padding-inline: 3vw;
+  gap: 10px;
+  background: url(../img/Rank\ display.png) center/100% 100% no-repeat;
+  font-size: 3vw;
+}
+.topper-container .top-1 {
+  margin-top: 18%;
+  order: 2;
+}
+.topper-container .top-2 {
+  margin-top: 18%;
+  order: 1;
+}
+
+.topper-container .top-3 {
+  order: 1;
+}
+
+footer{
+  position: relative;
+}
+footer img {
+  width: 100%;
+  position: absolute;
+  bottom: -18vw;
+  z-index: -1;
+}
