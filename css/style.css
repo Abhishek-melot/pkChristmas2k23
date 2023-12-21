@@ -301,8 +301,9 @@ button {
 }
 .reward-top span {
   z-index: 1;
-  font-size: 4.5vw;
+  font-size: 4vw;
   color: #fff;
+  text-wrap: nowrap;
   font-weight: 600;
 }
 .reward-text {
@@ -310,6 +311,11 @@ button {
   color: #fff;
   margin: 0 auto;
   margin-top: 48vw;
+  font-size: 3.5vw;
+}
+.reward-text-2{
+  font-size: 3vw;
+  text-align: center;
 }
 
 .tab-btns-schedule {
@@ -553,4 +559,12 @@ footer img {
   position: absolute;
   bottom: -18vw;
   z-index: -1;
+}
+
+footer p{
+  
+  font-size: 3vw;
+    text-align: center;
+    color: darkblue;
+    font-weight: 600;
 }

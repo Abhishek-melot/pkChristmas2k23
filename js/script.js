@@ -203,7 +203,7 @@ leftArrow1.addEventListener("click", () => {
 // Talent Rewards Round-2
 const TalentRewardR2 = [
   "15 days PK SUPER STAR BADGE + Audio theme of PK SuperStar + PK SUperStar Profile Frame",
-  "10 days Audio theme of PK SuperStar + PK SUperStar Profile Frame",
+  "10 days Audio theme of PK SuperStar + <br/> PK SUperStar Profile Frame",
   "07 days Audio theme of PK SuperStar ",
   "5 days Audio theme of PK SuperStar ",
 ];
@@ -217,7 +217,7 @@ const TalentRanks2 = [
 let prizesR2 = document.querySelectorAll(".prizesR2");
 let leftArrow2 = document.querySelector(".left-2 ");
 let rightArrow2 = document.querySelector(".right-2 ");
-let rewardText2 = document.querySelector(".reward-text-1");
+let rewardText2 = document.querySelector(".reward-text-2");
 let rewardContainer2 = document.querySelector(".r2");
 let currentId2 = +rewardContainer2.getAttribute("data-current");
 let rank2 = document.querySelector(".reward-top2 span");
