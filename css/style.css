@@ -69,7 +69,7 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("/img/Guide\ box.png");
+  background: url("../img/Guide\ box.png");
   background-size: 100% 100%;
   min-height: 80vh;
   justify-content: center;
@@ -125,13 +125,13 @@ button {
 
 .talent.active,
 .talentl.active {
-  background-image: url("/img/Talent-btn.png");
+  background-image: url("../img/Talent-btn.png");
   background-repeat: no-repeat;
   background-size: 100% 90%;
 }
 .user.active,
 .userl.active {
-  background-image: url("/img/user-btn.png");
+  background-image: url("../img/user-btn.png");
   background-repeat: no-repeat;
   background-size: 100% 90%;
 }
@@ -162,25 +162,25 @@ button {
   width: 35%;
 }
 .round-1 {
-  background-image: url("/img/Round1Unselected.png");
+  background-image: url("../img/Round1Unselected.png");
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .round-1.active {
-  background-image: url("/img/Round1Selected.png");
+  background-image: url("../img/Round1Selected.png");
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .round-2 {
-  background-image: url("/img/Round2Unselected.png");
+  background-image: url("../img/Round2Unselected.png");
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .round-2.active {
-  background-image: url("/img/Round2Selected.png");
+  background-image: url("../img/Round2Selected.png");
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -211,7 +211,7 @@ button {
   width: 100%;
 }
 .rewards {
-  background-image: url("/img/Rewards-Frame.png");
+  background-image: url("../img/Rewards-Frame.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center center;
@@ -363,7 +363,7 @@ button {
 }
 
 .tab-btns-schedule {
-  background: url("/img/Category-btn-bg.png") center/100% 100% no-repeat;
+  background: url("../img/Category-btn-bg.png") center/100% 100% no-repeat;
   width: 90%;
   height: 12vw;
   margin: auto;
@@ -410,7 +410,7 @@ button {
 }
 
 .row {
-  background: url(../img/4th\ name\ onwards\ strip.png) center/100% 100%
+  background: url('../img/4th\ name\ onwards\ strip.png') center/100% 100%
     no-repeat;
   width: 75%;
   display: flex;
@@ -442,7 +442,7 @@ button {
   grid-template-columns: 17% 31% auto 31% 14%;
   font-size: 2vw;
   margin: 0vw auto;
-  background-image: url(../img/4th\ name\ onwards\ strip.png);
+  background-image: url('../img/4th\ name\ onwards\ strip.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   align-items: center;
@@ -523,7 +523,7 @@ button {
   gap: 1vw;
   margin: auto;
   margin-top: 10px;
-  background: url(../img/rank\ bg.png) center/100% 100% no-repeat;
+  background: url('../img/rank\ bg.png') center/100% 100% no-repeat;
   padding: 2vw;
 }
 .topper-container .top {
@@ -535,7 +535,7 @@ button {
   color: #fff;
   padding-inline: 3vw;
   gap: 10px;
-  background: url(../img/Rank\ display.png) center/100% 100% no-repeat;
+  background: url('../img/Rank\ display.png') center/100% 100% no-repeat;
   font-size: 3vw;
 }
 .topper-container .top-1 {
