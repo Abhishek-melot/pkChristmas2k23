@@ -16,9 +16,9 @@ function closeDialog() {
 
 const tabs = document.querySelectorAll(".tab-btns > button");
 let content = document.querySelectorAll(".tab-content");
-console.log(tabs);
+// console.log(tabs);
 tabs.forEach((tab, i) => {
-  console.log(tab);
+  // console.log(tab);
   tab.addEventListener("click", () => {
     tabs.forEach((t) => {
       t.classList.remove("active");
@@ -39,9 +39,9 @@ tabs.forEach((tab, i) => {
 
 const roundBtns = document.querySelectorAll(".reward-round-btns button");
 const talentRewards = document.querySelectorAll(".talent-rewards");
-console.log(roundBtns);
+// console.log(roundBtns);
 roundBtns.forEach((tab, i) => {
-  console.log(tab);
+  // console.log(tab);
   tab.addEventListener("click", () => {
     roundBtns.forEach((t) => {
       t.classList.remove("active");
@@ -77,9 +77,9 @@ let prizes = document.querySelectorAll(".prizes-1");
 let rewardContainer = document.querySelector(".rewards");
 let currentId = +rewardContainer.getAttribute("data-current");
 let rank = document.querySelector(".reward-top span");
-console.log(currentId);
+// console.log(currentId);
 
-console.log(prizes);
+// console.log(prizes);
 rightArrow.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizes-1.active");
   let rank = document.querySelector(".reward-top span");
@@ -87,7 +87,6 @@ rightArrow.addEventListener("click", () => {
     currentPrize.nextElementSibling &&
     currentPrize.nextElementSibling.classList.contains("prizes-1")
   ) {
-    console.log(currentPrize.nextElementSibling);
     currentPrize.nextElementSibling.classList.add("active");
     currentId += 1;
     rank.innerHTML = ranks[currentId];
@@ -101,7 +100,6 @@ rightArrow.addEventListener("click", () => {
   rewardText.innerHTML = rewardData[currentId];
 });
 
-console.log(prizes.length);
 
 leftArrow.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizes-1.active");
@@ -110,7 +108,7 @@ leftArrow.addEventListener("click", () => {
     currentPrize.previousElementSibling &&
     currentPrize.previousElementSibling.classList.contains("prizes-1")
   ) {
-    console.log(currentPrize.previousElementSibling);
+    // console.log(currentPrize.previousElementSibling);
     currentPrize.previousElementSibling.classList.add("active");
     currentId -= 1;
     rank.innerHTML = ranks[currentId];
@@ -118,7 +116,7 @@ leftArrow.addEventListener("click", () => {
     prizes[prizes.length - 1].classList.add("active");
     currentId = prizes.length - 1;
     rank.innerHTML = ranks[currentId];
-    console.log(currentId);
+    // console.log(currentId);
   }
   currentPrize.classList.remove("active");
   rewardContainer.setAttribute("data-current", currentId);
@@ -148,7 +146,7 @@ let rewardText1 = document.querySelector(".reward-text-1");
 let rewardContainer1 = document.querySelector(".r1");
 let currentId1 = +rewardContainer1.getAttribute("data-current");
 let rank1 = document.querySelector(".reward-top1 span");
-console.log(prizesR1)
+// console.log(prizesR1)
 
 rightArrow1.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizesR1.active");
@@ -157,7 +155,7 @@ rightArrow1.addEventListener("click", () => {
     currentPrize.nextElementSibling &&
     currentPrize.nextElementSibling.classList.contains("prizesR1")
   ) {
-    console.log(currentPrize.nextElementSibling);
+    
     currentPrize.nextElementSibling.classList.add("active");
     currentId1 += 1;
     rank1.innerHTML = TalentRanks1[currentId1];
@@ -171,7 +169,7 @@ rightArrow1.addEventListener("click", () => {
   rewardText1.innerHTML = TalentRewardR1[currentId1];
 });
 
-console.log(prizesR1.length);
+// console.log(prizesR1.length);
 
 leftArrow1.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizesR1.active");
@@ -180,7 +178,7 @@ leftArrow1.addEventListener("click", () => {
     currentPrize.previousElementSibling &&
     currentPrize.previousElementSibling.classList.contains("prizesR1")
   ) {
-    console.log(currentPrize.previousElementSibling);
+    // console.log(currentPrize.previousElementSibling);
     currentPrize.previousElementSibling.classList.add("active");
     currentId1 -= 1;
     rank1.innerHTML = TalentRanks1[currentId1];
@@ -221,7 +219,7 @@ let rewardText2 = document.querySelector(".reward-text-2");
 let rewardContainer2 = document.querySelector(".r2");
 let currentId2 = +rewardContainer2.getAttribute("data-current");
 let rank2 = document.querySelector(".reward-top2 span");
-console.log(prizesR2)
+// console.log(prizesR2)
 
 rightArrow2.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizesR2.active");
@@ -230,7 +228,7 @@ rightArrow2.addEventListener("click", () => {
     currentPrize.nextElementSibling &&
     currentPrize.nextElementSibling.classList.contains("prizesR2")
   ) {
-    console.log(currentPrize.nextElementSibling);
+    // console.log(currentPrize.nextElementSibling);
     currentPrize.nextElementSibling.classList.add("active");
     currentId2 += 1;
     rank2.innerHTML = TalentRanks2[currentId2];
@@ -244,7 +242,7 @@ rightArrow2.addEventListener("click", () => {
   rewardText2.innerHTML = TalentRewardR2[currentId2];
 });
 
-console.log(prizesR2.length);
+// console.log(prizesR2.length);
 
 leftArrow2.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizesR2.active");
@@ -253,7 +251,7 @@ leftArrow2.addEventListener("click", () => {
     currentPrize.previousElementSibling &&
     currentPrize.previousElementSibling.classList.contains("prizesR2")
   ) {
-    console.log(currentPrize.previousElementSibling);
+    // console.log(currentPrize.previousElementSibling);
     currentPrize.previousElementSibling.classList.add("active");
     currentId2 -= 1;
     rank2.innerHTML = TalentRanks2[currentId2];
@@ -273,7 +271,7 @@ leftArrow2.addEventListener("click", () => {
 
 const roundBtns2 = document.querySelectorAll(".schedule-round-btns button");
 const talentRewards2 = document.querySelectorAll(".talent-rewards2");
-console.log(roundBtns);
+// console.log(roundBtns);
 roundBtns2.forEach((tab, i) => {
   console.log(tab);
   tab.addEventListener("click", () => {
@@ -297,8 +295,7 @@ roundBtns2.forEach((tab, i) => {
 
 const tabs1 = document.querySelectorAll(" .tab1");
 const scontent = document.querySelectorAll(".talent-rewards2 > div");
-console.log(scontent);
-console.log(tabs1)
+
 tabs1.forEach((tab, i) => {
   tab.addEventListener("click", () => {
     tabs1.forEach((t) => {
@@ -320,8 +317,7 @@ tabs1.forEach((tab, i) => {
 
 const tabs2 = document.querySelectorAll(".tab2");
 const scontent2 = document.querySelectorAll(".talent-rewardsR2 > div");
-console.log(scontent);
-console.log(tabs2)
+
 tabs2.forEach((tab, i) => {
   tab.addEventListener("click", () => {
     tabs2.forEach((t) => {
@@ -345,8 +341,8 @@ tabs2.forEach((tab, i) => {
 
 const tabs3 = document.querySelectorAll(" .tab3");
 let lcontent = document.querySelectorAll(".leaderboard-content");
-console.log(tabs3);
-console.log(lcontent)
+// console.log(tabs3);
+// console.log(lcontent)
 tabs3.forEach((tab, i) => {
   console.log(tabs3.length);
   tab.addEventListener("click", () => {
@@ -369,8 +365,8 @@ tabs3.forEach((tab, i) => {
 
 const roundBtnsL = document.querySelectorAll(".leaderboard-content-user .leaderboard-round-btns button");
 const leaderboardContentUser = document.querySelectorAll(".leaderboard-content-user .leaderboard");
-console.log(roundBtnsL);
-console.log(leaderboardContentUser)
+// console.log(roundBtnsL);
+// console.log(leaderboardContentUser)
 roundBtnsL.forEach((tab, i) => {
   console.log(tab);
   tab.addEventListener("click", () => {
@@ -391,8 +387,8 @@ roundBtnsL.forEach((tab, i) => {
 
 const roundBtnsL1 = document.querySelectorAll(".leaderboard-content-talent .leaderboard-round-btns button");
 const leaderboardContentTalent = document.querySelectorAll(".leaderboard-content-talent .leaderboard");
-console.log(roundBtnsL1);
-console.log(leaderboardContentTalent);
+// console.log(roundBtnsL1);
+// console.log(leaderboardContentTalent);
 roundBtnsL1.forEach((tab, i) => {
   console.log(tab);
   tab.addEventListener("click", () => {
@@ -440,9 +436,9 @@ async function fetchSheetData(sheet_range) {
 
 function renderLeaderboardData(data) {
   const top3 = data.rows.slice(0, 3);
-  console.log(top3)
+  // console.log(top3)
   const toppers = document.querySelectorAll(".leaderboard-content-user .l-round1 .topper-container .top");
-  console.log(toppers);
+  // console.log(toppers);
   toppers.forEach((topper, i) => {
     
     const current = top3[i].c;
@@ -460,7 +456,7 @@ function renderLeaderboardData(data) {
   // const beanImg=document.querySelector(".bean-img");
   for (let i = 3; i < data.rows.length; i++) {
     const current = data.rows[i].c;
-    console.log(current);
+    // console.log(current);
     const winnerStrip = winnerStripTemplate.content.cloneNode(true);
     const position = winnerStrip.querySelector(".position");
     
@@ -485,7 +481,7 @@ async function init() {
   // console.log(data);
   // renderScheduleData(data.table);
   const leaderboardData = await fetchSheetData("A18:C27");
-  console.log(leaderboardData.table)
+  // console.log(leaderboardData.table)
   renderLeaderboardData(leaderboardData.table);
 }
 
