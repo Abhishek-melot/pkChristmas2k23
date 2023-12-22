@@ -583,7 +583,7 @@ button {
 .winner-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 68%;
   /* height: 450px; */
   align-items: center;
   overflow-y: scroll;
@@ -592,6 +592,7 @@ button {
   gap: 8px;
   margin-bottom: 32px;
   padding-bottom: 47px;
+  margin-inline: auto;
 }
 
 .winner-strip {
