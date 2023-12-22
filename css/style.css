@@ -607,17 +607,7 @@ button {
   gap: 1em;
 }
 
-.avatar {
-  
-  border-radius: 100px;
-  
-  border: 1px solid var(--color-accent);
- 
-}
-.avatar img {
-  height: 100%;
-  width: 100%;
-}
+
 .winner-strip .info{
   flex: 1;
   color: inherit;
