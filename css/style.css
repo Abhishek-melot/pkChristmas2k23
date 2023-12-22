@@ -74,7 +74,7 @@ header img {
   min-height: 80vh;
   justify-content: center;
   background-repeat: no-repeat;
-  padding: 10vw 0;
+  padding: 9vw 0;
 }
 .howToPlay img {
   width: 50%;
@@ -313,7 +313,7 @@ button {
   margin-top: 48vw;
   font-size: 3.5vw;
 }
-.reward-text-2{
+.reward-text-2 {
   font-size: 3vw;
   text-align: center;
 }
@@ -410,7 +410,7 @@ button {
 }
 
 .row {
-  background: url('../img/4th\ name\ onwards\ strip.png') center/100% 100%
+  background: url("../img/4th\ name\ onwards\ strip.png") center/100% 100%
     no-repeat;
   width: 75%;
   display: flex;
@@ -442,7 +442,7 @@ button {
   grid-template-columns: 17% 31% auto 31% 14%;
   font-size: 2vw;
   margin: 0vw auto;
-  background-image: url('../img/4th\ name\ onwards\ strip.png');
+  background-image: url("../img/4th\ name\ onwards\ strip.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   align-items: center;
@@ -523,7 +523,7 @@ button {
   gap: 1vw;
   margin: auto;
   margin-top: 10px;
-  background: url('../img/rank\ bg.png') center/100% 100% no-repeat;
+  background: url("../img/rank\ bg.png") center/100% 100% no-repeat;
   padding: 2vw;
 }
 .topper-container .top {
@@ -535,7 +535,7 @@ button {
   color: #fff;
   padding-inline: 3vw;
   gap: 10px;
-  background: url('../img/Rank\ display.png') center/100% 100% no-repeat;
+  background: url("../img/Rank\ display.png") center/100% 100% no-repeat;
   font-size: 3vw;
 }
 .topper-container .top-1 {
@@ -551,7 +551,80 @@ button {
   order: 1;
 }
 
-footer{
+.avatar {
+  max-width: 10vw;
+  margin: auto;
+}
+.avatar img {
+  width: 100%;
+}
+.info {
+  margin-bottom: 3vw;
+  font-size: 2.4vw;
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  color: white;
+  font-weight: 600;
+}
+.info .name {
+  text-wrap: nowrap;
+}
+.info .beans-container {
+  margin-top: 0.5vw;
+  display: flex;
+  gap: 1vw;
+}
+.info span .bean-img {
+  max-width: 5vw;
+  max-height: 3vw;
+}
+
+.winner-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* height: 450px; */
+  align-items: center;
+  overflow-y: scroll;
+  margin-top: 16px;
+  padding-inline: 16px;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding-bottom: 47px;
+}
+
+.winner-strip {
+  color: #f6d785;
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  padding-inline: 14px;
+  /* padding-bottom: 10px; */
+  background: url("../img/4th\ name\ onwards\ strip.png") center/100% 100%
+    no-repeat;
+  gap: 1em;
+}
+
+.avatar {
+  
+  border-radius: 100px;
+  
+  border: 1px solid var(--color-accent);
+ 
+}
+.avatar img {
+  height: 100%;
+  width: 100%;
+}
+.winner-strip .info{
+  flex: 1;
+  color: inherit;
+}
+/* Footer section styling */
+
+footer {
   position: relative;
 }
 footer img {
@@ -561,10 +634,9 @@ footer img {
   z-index: -1;
 }
 
-footer p{
-  
+footer p {
   font-size: 3vw;
-    text-align: center;
-    color: darkblue;
-    font-weight: 600;
+  text-align: center;
+  color: darkblue;
+  font-weight: 600;
 }

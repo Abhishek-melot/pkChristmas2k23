@@ -440,9 +440,10 @@ async function fetchSheetData(sheet_range) {
 
 function renderLeaderboardData(data) {
   const top3 = data.rows.slice(0, 3);
-
+  
   const toppers = document.querySelectorAll(".top");
   toppers.forEach((topper, i) => {
+    
     const current = top3[i].c;
     const name = topper.querySelector(".name");
     const id = topper.querySelector(".id");
@@ -455,11 +456,13 @@ function renderLeaderboardData(data) {
 
   const winnerContainer = document.querySelector(".winner-container");
   const winnerStripTemplate = document.querySelector("#winner-strip");
-
+  // const beanImg=document.querySelector(".bean-img");
   for (let i = 3; i < data.rows.length; i++) {
     const current = data.rows[i].c;
+    console.log(current)
     const winnerStrip = winnerStripTemplate.content.cloneNode(true);
     const position = winnerStrip.querySelector(".position");
+    
     position.innerHTML = i + 1;
 
     const name = winnerStrip.querySelector(".name");
@@ -467,6 +470,8 @@ function renderLeaderboardData(data) {
 
     const id = winnerStrip.querySelector(".id");
     id.innerHTML = current[1].v;
+
+    // beanImg.src=
 
     const beans = winnerStrip.querySelector(".beans");
     beans.innerHTML = current[2].v || 0;
@@ -482,4 +487,4 @@ async function init() {
   renderLeaderboardData(leaderboardData.table);
 }
 
-// init();
+init();
