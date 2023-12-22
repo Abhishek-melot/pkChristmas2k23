@@ -440,8 +440,9 @@ async function fetchSheetData(sheet_range) {
 
 function renderLeaderboardData(data) {
   const top3 = data.rows.slice(0, 3);
-  
-  const toppers = document.querySelectorAll(".top");
+  console.log(top3)
+  const toppers = document.querySelectorAll(".leaderboard-content-user .l-round1 .topper-container .top");
+  console.log(toppers);
   toppers.forEach((topper, i) => {
     
     const current = top3[i].c;
@@ -459,7 +460,7 @@ function renderLeaderboardData(data) {
   // const beanImg=document.querySelector(".bean-img");
   for (let i = 3; i < data.rows.length; i++) {
     const current = data.rows[i].c;
-    console.log(current)
+    console.log(current);
     const winnerStrip = winnerStripTemplate.content.cloneNode(true);
     const position = winnerStrip.querySelector(".position");
     
@@ -484,6 +485,7 @@ async function init() {
   // console.log(data);
   // renderScheduleData(data.table);
   const leaderboardData = await fetchSheetData("A18:C27");
+  console.log(leaderboardData.table)
   renderLeaderboardData(leaderboardData.table);
 }
 
