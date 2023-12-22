@@ -104,7 +104,7 @@ button {
 }
 .tab-btns,
 .tab-btns-leaderboard {
-  background-image: url("/img/user.png");
+  background-image: url("../img/user.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
