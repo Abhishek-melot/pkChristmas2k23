@@ -434,11 +434,11 @@ async function fetchSheetData(sheet_range) {
 
 
 
-function renderLeaderboardData(data) {
+function renderLeaderboardData(data,name,roundNumber) {
   const top3 = data.rows.slice(0, 3);
   // console.log(top3)
-  const toppers = document.querySelectorAll(".leaderboard-content-user .l-round1 .topper-container .top");
-  // console.log(toppers);
+  const toppers = name === "user" ? document.querySelectorAll(`.leaderboard-content-user .l-round${roundNumber} .topper-container .top`) : document.querySelectorAll(`.leaderboard-content-talent .l-round${roundNumber} .topper-container .top`);
+  console.log(toppers);
   toppers.forEach((topper, i) => {
     
     const current = top3[i].c;
@@ -451,7 +451,7 @@ function renderLeaderboardData(data) {
     beans.innerText = current[2].v || 0;
   });
 
-  const winnerContainer = document.querySelector(".winner-container");
+  const winnerContainer = name==="user"? document.querySelector(`.leaderboard-content-user .l-round${roundNumber} .winner-container`): document.querySelector(`.leaderboard-content-talent .l-round${roundNumber} .winner-container`);
   const winnerStripTemplate = document.querySelector("#winner-strip");
   // const beanImg=document.querySelector(".bean-img");
   for (let i = 3; i < data.rows.length; i++) {
@@ -481,8 +481,12 @@ async function init() {
   // console.log(data);
   // renderScheduleData(data.table);
   const leaderboardData = await fetchSheetData("A18:C27");
-  // console.log(leaderboardData.table)
-  renderLeaderboardData(leaderboardData.table);
-}
+  
+  console.log(leaderboardData.table)
+  renderLeaderboardData(leaderboardData.table,"user","1");
+  renderLeaderboardData(leaderboardData.table,"talent","1");
+  renderLeaderboardData(leaderboardData.table,"user","2");
+  renderLeaderboardData(leaderboardData.table,"talent","2");
+} 
 
 init();
