@@ -412,7 +412,7 @@ roundBtnsL1.forEach((tab, i) => {
 let SHEET_ID = "1GoCTAdP_gpgf8vZv0MPGGj2GFGUxiCNqpppWBs0C4yQ";
 let SHEET_TITLE = "test_event";
 
-// let SHEET_RANGE = "A34:C43";
+let SHEET_RANGE = "A34:C43";
 
 let URL =
   "https://docs.google.com/spreadsheets/d/" +
@@ -478,15 +478,12 @@ function renderLeaderboardData(data,name,roundNumber) {
 }
 
 async function init() {
-  // const data = await fetchSheetData(SHEET_RANGE);
-  // console.log(data);
-  // renderScheduleData(data.table);
+  
   const leaderboardData = await fetchSheetData("A34:C43");
   console.log('------------',leaderboardData.table);
   renderLeaderboardData(leaderboardData.table,"user","1");
-  // renderLeaderboardData(leaderboardData.table,"talent","1");
-  // renderLeaderboardData(leaderboardData.table,"user","2");
-  // renderLeaderboardData(leaderboardData.table,"talent","2");
 } 
 
 init();
+
+// `http://www.streamkarlive.live/meShow/entrance?parameter=%7B%22FuncTag%22:10005044,%22userId%22:${user_id}%7D`

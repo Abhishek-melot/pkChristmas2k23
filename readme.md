@@ -1,5 +1,4 @@
-
-      <section class="leaderboard-section">
+<section class="leaderboard-section">
         <!-- User and Talent btns -->
 
         <div class="tab-btns-leaderboard">
@@ -80,6 +79,11 @@
               </div>
             </div>
 
+<!------------------------------------------------------------->
+            
+            <!-- <div id="conDiv"></div> -->
+
+<!------------------------------------------------------------->
             <div class="winner-container">
               <template id="winner-strip">
                 <div class="winner-strip">
