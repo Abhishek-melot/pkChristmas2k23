@@ -116,7 +116,7 @@ button {
 
 .tab,
 .tab2,
-.tab3 {
+.tab3,.tabL {
   width: 52%;
   /* height: 110%; */
   transform: scale(1.1);
@@ -340,17 +340,17 @@ button {
   height: 50px;
   margin-top: 4px;
 }
-.dancing.active {
+.dancing.active, .tab-categories .dancingL.active{
   background: url("./assets/img/btn/Dance btn.png") center/100% 100% no-repeat;
 
   transform: scale(1.2);
 }
-.singing.active {
+.singing.active,.tab-categories .singingL.active{
   background: url("./assets/img/btn/Singing battle btn.png") center/100% 100%
     no-repeat;
   transform: scale(1.2);
 }
-.fashion.active {
+.fashion.active,.tab-categories .fashionL.active {
   background: url("./assets/img/btn/fashion battle btn.png") center/100% 100%
     no-repeat;
   transform: scale(1.2);
@@ -362,7 +362,7 @@ button {
   margin-top: 25vw;
 }
 
-.tab-btns-schedule {
+.tab-btns-schedule , .tab-categories{
   background: url("../img/Category-btn-bg.png") center/100% 100% no-repeat;
   width: 90%;
   height: 12vw;
@@ -651,39 +651,12 @@ footer p {
   font-weight: 600;
 }
 
-
+.leaderboard-wrapper{
+  display: none;
+}
+.leaderboard-wrapper.active{
+  display: block;
+}
 
 /*----------------------leaderboard css------------------*/
 
-.colThree{
-  display: grid;
-  grid-template-columns: 20% 39% 46%;
-  width: 98%;
-  margin: auto;
-  margin-top: 2vw;
-  grid-gap: 0vw;
-  /* border-bottom: 2px solid rgb(12, 78, 103); */
-  /* background: rgba(30, 20, 120, 0.65); */
-  padding: 2vw;
-  border-radius: 3vw;
-}
-
-.imgClass{
-  border-radius: 50%;
-  /* height: 15vw; */
-  width: 12vw;
-  vertical-align: middle;
-  border: 2px solid #cc3554;
-  padding: 2px;
-}
-
-.imgsmal{
-  width: 10%;
-  vertical-align: middle;
-}
-.lastDiv{text-align: center;}
-.lastDiv p{
-  margin: 1vw;
-  font-size: 2.75vw;
-  text-shadow: 0px 0px 2px #fff;
-}
