@@ -1,4 +1,4 @@
-<section class="leaderboard-section">
+      <section class="leaderboard-section">
         <!-- User and Talent btns -->
 
         <div class="tab-btns-leaderboard">
@@ -7,7 +7,6 @@
         </div>
 
         <div class="leaderboard-content leaderboard-content-user active">
-
           <!-- Leaderboard round-btns -->
           <div class="leaderboard-round-btns">
             <button class="round-1 active"></button>
@@ -21,9 +20,9 @@
             </div>
 
             <div class="topper-container">
-              <div style="margin-top: 0;" class="top top-1">
+              <div style="margin-top: 0" class="top top-1">
                 <div class="avatar">
-                  <img src="./img/3rd.png" alt="avatar" />
+                  <img src="" alt="avatar" />
                 </div>
                 <div class="info">
                   <span class="name">Name</span>
@@ -42,7 +41,7 @@
 
               <div class="top top-2">
                 <div class="avatar">
-                  <img src="./img/2nd.png" alt="avatar" />
+                  <img src="" alt="avatar" />
                 </div>
                 <div class="info">
                   <span class="name">Name</span>
@@ -61,7 +60,7 @@
 
               <div class="top top-1">
                 <div class="avatar">
-                  <img src="./img/1st.png" alt="avatar" />
+                  <img class="avatar-img" src="" alt="" />
                 </div>
                 <div class="info">
                   <span class="name">Name</span>
@@ -79,11 +78,11 @@
               </div>
             </div>
 
-<!------------------------------------------------------------->
-            
+            <!------------------------------------------------------------->
+
             <!-- <div id="conDiv"></div> -->
 
-<!------------------------------------------------------------->
+            <!------------------------------------------------------------->
             <div class="winner-container">
               <template id="winner-strip">
                 <div class="winner-strip">
@@ -91,7 +90,7 @@
                   <div class="avatar">
                     <img src="" alt="" />
                   </div>
-                  <div class="info" style="gap: 1vw;">
+                  <div class="info" style="gap: 1vw">
                     <span class="name"></span>
                     <span class="id"></span>
                   </div>
@@ -204,7 +203,6 @@
         </div>
 
         <div class="leaderboard-content leaderboard-content-talent">
-
           <!-- Leaderboard round-btns -->
           <div class="leaderboard-round-btns">
             <button class="round-1 active"></button>
@@ -214,13 +212,13 @@
           <!-- Leaderboard talent-btns -->
 
           <div class="tab-btns-schedule tab-btns-leaderboard">
-            <button class="dancing  tab1 tab2"></button>
+            <button class="dancing tab1 tab2"></button>
             <button class="singing tab1 tab2"></button>
             <button class="fashion active tab1 tab2"></button>
           </div>
 
           <!-- Round 1 talent leaderboards -->
-          
+
           <div class="leaderboard l-round1 active">
             <div class="beans-amount">
               <!-- <img src="./img/Beans-pot-amount.png" alt="beans-amount" />
@@ -758,7 +756,5 @@
               </template>
             </div>
           </div>
-
-
         </div>
       </section>

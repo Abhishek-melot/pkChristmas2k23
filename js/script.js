@@ -1,5 +1,15 @@
 // Modal code.
 
+async function getUserImageUrl(userId) {
+  const res = await fetch(
+    `https://www.streamkarlive.live/meShow/entrance?parameter=%7B%22FuncTag%22:10005044,%22userId%22:${userId}%7D`
+  );
+  const data = await res.json();
+  if (data && data.portrait_path_original)
+    return data.portrait_path_original + "!256";
+  else return "";
+}
+
 const modal = document.getElementById("modal");
 
 function showDialog() {
@@ -100,7 +110,6 @@ rightArrow.addEventListener("click", () => {
   rewardText.innerHTML = rewardData[currentId];
 });
 
-
 leftArrow.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizes-1.active");
 
@@ -150,12 +159,11 @@ let rank1 = document.querySelector(".reward-top1 span");
 
 rightArrow1.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizesR1.active");
-  
+
   if (
     currentPrize.nextElementSibling &&
     currentPrize.nextElementSibling.classList.contains("prizesR1")
   ) {
-    
     currentPrize.nextElementSibling.classList.add("active");
     currentId1 += 1;
     rank1.innerHTML = TalentRanks1[currentId1];
@@ -193,11 +201,6 @@ leftArrow1.addEventListener("click", () => {
   rewardText1.innerHTML = TalentRewardR1[currentId1];
 });
 
-
-
-
-
-
 // Talent Rewards Round-2
 const TalentRewardR2 = [
   "15 days PK SUPER STAR BADGE + Audio theme of PK SuperStar + PK SUperStar Profile Frame",
@@ -223,7 +226,7 @@ let rank2 = document.querySelector(".reward-top2 span");
 
 rightArrow2.addEventListener("click", () => {
   let currentPrize = document.querySelector(".prizesR2.active");
-  
+
   if (
     currentPrize.nextElementSibling &&
     currentPrize.nextElementSibling.classList.contains("prizesR2")
@@ -266,7 +269,6 @@ leftArrow2.addEventListener("click", () => {
   rewardText2.innerHTML = TalentRewardR2[currentId2];
 });
 
-
 // Schedule Round buttons
 
 const roundBtns2 = document.querySelectorAll(".schedule-round-btns button");
@@ -289,7 +291,6 @@ roundBtns2.forEach((tab, i) => {
     tab.classList.add("active");
   });
 });
-
 
 // Schedule content
 
@@ -314,7 +315,6 @@ tabs1.forEach((tab, i) => {
   });
 });
 
-
 const tabs2 = document.querySelectorAll(".tab2");
 const scontent2 = document.querySelectorAll(".talent-rewardsR2 > div");
 
@@ -335,7 +335,6 @@ tabs2.forEach((tab, i) => {
     tab.classList.add("active");
   });
 });
-
 
 // Leaderboard user talent tabs switching.
 
@@ -363,8 +362,12 @@ tabs3.forEach((tab, i) => {
 
 // Leaderboard rounds btns switching
 
-const roundBtnsL = document.querySelectorAll(".leaderboard-content-user .leaderboard-round-btns button");
-const leaderboardContentUser = document.querySelectorAll(".leaderboard-content-user .leaderboard");
+const roundBtnsL = document.querySelectorAll(
+  ".leaderboard-content-user .leaderboard-round-btns button"
+);
+const leaderboardContentUser = document.querySelectorAll(
+  ".leaderboard-content-user .leaderboard"
+);
 // console.log(roundBtnsL);
 // console.log(leaderboardContentUser)
 roundBtnsL.forEach((tab, i) => {
@@ -385,8 +388,12 @@ roundBtnsL.forEach((tab, i) => {
   });
 });
 
-const roundBtnsL1 = document.querySelectorAll(".leaderboard-content-talent .leaderboard-round-btns button");
-const leaderboardContentTalent = document.querySelectorAll(".leaderboard-content-talent .leaderboard");
+const roundBtnsL1 = document.querySelectorAll(
+  ".leaderboard-content-talent .leaderboard-round-btns button"
+);
+const leaderboardContentTalent = document.querySelectorAll(
+  ".leaderboard-content-talent .leaderboard"
+);
 // console.log(roundBtnsL1);
 // console.log(leaderboardContentTalent);
 roundBtnsL1.forEach((tab, i) => {
@@ -419,9 +426,9 @@ let URL =
   SHEET_ID +
   "/gviz/tq?sheet=" +
   SHEET_TITLE +
-  "&range=" 
+  "&range=";
 
-  console.log(URL)
+console.log(URL);
 
 async function fetchSheetData(sheet_range) {
   try {
@@ -433,17 +440,24 @@ async function fetchSheetData(sheet_range) {
   }
 }
 
-
-
-function renderLeaderboardData(data,name,roundNumber) {
+async function renderLeaderboardData(data, name, roundNumber) {
   const top3 = data.rows.slice(0, 3);
-  console.log(top3)
-  const toppers = name === "user" ? document.querySelectorAll(`.leaderboard-content-user .l-round${roundNumber} .topper-container .top`) : document.querySelectorAll(`.leaderboard-content-talent .l-round${roundNumber} .topper-container .top`);
+  console.log(top3);
+  const toppers =
+    name === "user"
+      ? document.querySelectorAll(
+          `.leaderboard-content-user .l-round${roundNumber} .topper-container .top`
+        )
+      : document.querySelectorAll(
+          `.leaderboard-content-talent .l-round${roundNumber} .topper-container .top`
+        );
   console.log(toppers);
-  toppers.forEach((topper, i) => {
-    
+  toppers.forEach(async (topper, i) => {
     const current = top3[i].c;
     const name = topper.querySelector(".name");
+    const avatar = topper.querySelector("img");
+    const userImageUrl = await getUserImageUrl(current[1].v);
+    avatar.setAttribute("src", userImageUrl);
     const id = topper.querySelector(".id");
     const beans = topper.querySelector(".beans");
 
@@ -452,7 +466,14 @@ function renderLeaderboardData(data,name,roundNumber) {
     beans.innerText = current[2].v || 0;
   });
 
-  const winnerContainer = name==="user"? document.querySelector(`.leaderboard-content-user .l-round${roundNumber} .winner-container`): document.querySelector(`.leaderboard-content-talent .l-round${roundNumber} .winner-container`);
+  const winnerContainer =
+    name === "user"
+      ? document.querySelector(
+          `.leaderboard-content-user .l-round${roundNumber} .winner-container`
+        )
+      : document.querySelector(
+          `.leaderboard-content-talent .l-round${roundNumber} .winner-container`
+        );
   const winnerStripTemplate = document.querySelector("#winner-strip");
   // const beanImg=document.querySelector(".bean-img");
   for (let i = 3; i < data.rows.length; i++) {
@@ -460,8 +481,14 @@ function renderLeaderboardData(data,name,roundNumber) {
     // console.log(current);
     const winnerStrip = winnerStripTemplate.content.cloneNode(true);
     const position = winnerStrip.querySelector(".position");
-    
+
     position.innerHTML = i + 1;
+
+    const avatarContainer = winnerStrip.querySelector(".avatar");
+    avatarContainer.style.overflow = "hidden";
+    const avatar = avatarContainer.querySelector("img");
+    const userImageUrl = await getUserImageUrl(current[1].v);
+    avatar.setAttribute("src", userImageUrl);
 
     const name = winnerStrip.querySelector(".name");
     name.innerHTML = current[0].v;
@@ -478,12 +505,9 @@ function renderLeaderboardData(data,name,roundNumber) {
 }
 
 async function init() {
-  
   const leaderboardData = await fetchSheetData("A34:C43");
-  console.log('------------',leaderboardData.table);
-  renderLeaderboardData(leaderboardData.table,"user","1");
-} 
+  console.log("------------", leaderboardData.table);
+  renderLeaderboardData(leaderboardData.table, "user", "1");
+}
 
 init();
-
-// `http://www.streamkarlive.live/meShow/entrance?parameter=%7B%22FuncTag%22:10005044,%22userId%22:${user_id}%7D`
