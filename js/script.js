@@ -315,9 +315,10 @@ tabs1.forEach((tab, i) => {
   });
 });
 
-const tabs2 = document.querySelectorAll(".tab2");
-const scontent2 = document.querySelectorAll(".talent-rewardsR2 > div");
 
+const tabs2 = document.querySelectorAll(".tab-btns-schedule button");
+const scontent2 = document.querySelectorAll(".talent-rewardsR2 > div");
+console.log(scontent2)
 tabs2.forEach((tab, i) => {
   tab.addEventListener("click", () => {
     tabs2.forEach((t) => {
@@ -388,12 +389,10 @@ roundBtnsL.forEach((tab, i) => {
   });
 });
 
-const roundBtnsL1 = document.querySelectorAll(
-  ".leaderboard-content-talent .leaderboard-round-btns button"
-);
-const leaderboardContentTalent = document.querySelectorAll(
-  ".leaderboard-content-talent .leaderboard"
-);
+
+const roundBtnsL1 = document.querySelectorAll(".leaderboard-content-talent .leaderboard-round-btns button");
+const leaderboardContentTalent = document.querySelectorAll(".leaderboard-content-talent .leaderboard-wrapper");
+
 // console.log(roundBtnsL1);
 // console.log(leaderboardContentTalent);
 roundBtnsL1.forEach((tab, i) => {
@@ -413,6 +412,54 @@ roundBtnsL1.forEach((tab, i) => {
     tab.classList.add("active");
   });
 });
+
+const tabsL = document.querySelectorAll(".tab-categories button");
+console.log(tabsL)
+const scontent3 = document.querySelectorAll(".leaderboard-content-talent .leaderboard-wrapper .l-round1 ");
+console.log(scontent3)
+tabsL.forEach((tab, i) => {
+  tab.addEventListener("click", () => {
+    tabsL.forEach((t) => {
+      t.classList.remove("active");
+    });
+
+    scontent3.forEach((c, ci) => {
+      if (i === ci) {
+        c.classList.add("active");
+      } else {
+        c.classList.remove("active");
+      }
+    });
+
+    tab.classList.add("active");
+  });
+});
+
+const tabsL1 = document.querySelectorAll(".tab-categories button");
+console.log(tabsL1)
+const scontent4 = document.querySelectorAll(".leaderboard-content-talent .leaderboard-wrapper .l-round2 ");
+console.log(scontent4)
+tabsL1.forEach((tab, i) => {
+  tab.addEventListener("click", () => {
+    tabsL1.forEach((t) => {
+      t.classList.remove("active");
+    });
+
+    scontent4.forEach((c, ci) => {
+      if (i === ci) {
+        c.classList.add("active");
+      } else {
+        c.classList.remove("active");
+      }
+    });
+
+    tab.classList.add("active");
+  });
+});
+
+
+
+
 
 // Fetching schedule data from spreadsheet.
 
@@ -506,6 +553,7 @@ async function renderLeaderboardData(data, name, roundNumber) {
 
 async function init() {
   const leaderboardData = await fetchSheetData("A34:C43");
+
   console.log("------------", leaderboardData.table);
   renderLeaderboardData(leaderboardData.table, "user", "1");
 }

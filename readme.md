@@ -1,3 +1,4 @@
+
       <section class="leaderboard-section">
         <!-- User and Talent btns -->
 
@@ -758,3 +759,4 @@
           </div>
         </div>
       </section>
+
