@@ -412,19 +412,20 @@ roundBtnsL1.forEach((tab, i) => {
 let SHEET_ID = "1GoCTAdP_gpgf8vZv0MPGGj2GFGUxiCNqpppWBs0C4yQ";
 let SHEET_TITLE = "test_event";
 
-let SHEET_RANGE = "A4:C13";
+// let SHEET_RANGE = "A34:C43";
 
 let URL =
   "https://docs.google.com/spreadsheets/d/" +
   SHEET_ID +
   "/gviz/tq?sheet=" +
   SHEET_TITLE +
-  "&range=" +
-  SHEET_RANGE;
+  "&range=" 
+
+  console.log(URL)
 
 async function fetchSheetData(sheet_range) {
   try {
-    const res = await fetch(`${URL}`);
+    const res = await fetch(`${URL}${sheet_range}`);
     const data = await res.text();
     return JSON.parse(data.substring(47).slice(0, -2));
   } catch (e) {
@@ -436,7 +437,7 @@ async function fetchSheetData(sheet_range) {
 
 function renderLeaderboardData(data,name,roundNumber) {
   const top3 = data.rows.slice(0, 3);
-  // console.log(top3)
+  console.log(top3)
   const toppers = name === "user" ? document.querySelectorAll(`.leaderboard-content-user .l-round${roundNumber} .topper-container .top`) : document.querySelectorAll(`.leaderboard-content-talent .l-round${roundNumber} .topper-container .top`);
   console.log(toppers);
   toppers.forEach((topper, i) => {
@@ -480,13 +481,12 @@ async function init() {
   // const data = await fetchSheetData(SHEET_RANGE);
   // console.log(data);
   // renderScheduleData(data.table);
-  const leaderboardData = await fetchSheetData("A18:C27");
-  
-  console.log(leaderboardData.table)
+  const leaderboardData = await fetchSheetData("A34:C43");
+  console.log('------------',leaderboardData.table);
   renderLeaderboardData(leaderboardData.table,"user","1");
-  renderLeaderboardData(leaderboardData.table,"talent","1");
-  renderLeaderboardData(leaderboardData.table,"user","2");
-  renderLeaderboardData(leaderboardData.table,"talent","2");
+  // renderLeaderboardData(leaderboardData.table,"talent","1");
+  // renderLeaderboardData(leaderboardData.table,"user","2");
+  // renderLeaderboardData(leaderboardData.table,"talent","2");
 } 
 
 init();
