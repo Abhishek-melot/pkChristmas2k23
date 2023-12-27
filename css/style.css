@@ -504,7 +504,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 18vw;
+  padding-top: 22vw;
 }
 .beans-amount img {
   width: 100%;
@@ -534,16 +534,16 @@ button {
   padding-top: 20px;
   color: #fff;
   padding-inline: 3vw;
-  gap: 10px;
+  gap: 3px;
   background: url("../img/Rank\ display.png") center/100% 100% no-repeat;
   font-size: 3vw;
   overflow: hidden;
 }
 .topper-container .top-1 {
-  margin-top: 18%;
+  
   order: 2;
 }
-.top-1 .avatar {
+.top-1 .avatar,.top-2 .avatar,.top-3 .avatar {
   background: url("../img/1st.png") center/100% 100% no-repeat;
   overflow: hidden;
 }
@@ -557,12 +557,12 @@ button {
 }
 
 .topper-container .top-3 {
-  order: 1;
+  margin-top: 18%;
+  order: 3;
 }
 .top-3 .avatar {
   background: url("../img/3st.png") center/100% 100% no-repeat;
   overflow: hidden;
-  padding: 10px;
 }
 .avatar {
   max-width: 10vw;

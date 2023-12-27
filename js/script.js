@@ -487,7 +487,9 @@ async function fetchSheetData(sheet_range) {
   }
 }
 
-async function renderLeaderboardData(data, name, roundNumber) {
+
+
+async function renderLeaderboardData(data, name, roundNumber,category) {
   const top3 = data.rows.slice(0, 3);
   console.log(top3);
   const toppers =
@@ -496,9 +498,9 @@ async function renderLeaderboardData(data, name, roundNumber) {
           `.leaderboard-content-user .l-round${roundNumber} .topper-container .top`
         )
       : document.querySelectorAll(
-          `.leaderboard-content-talent .l-round${roundNumber} .topper-container .top`
+          `#${category}-${roundNumber} .top`
         );
-  console.log(toppers);
+  
   toppers.forEach(async (topper, i) => {
     const current = top3[i].c;
     const name = topper.querySelector(".name");
@@ -519,10 +521,12 @@ async function renderLeaderboardData(data, name, roundNumber) {
           `.leaderboard-content-user .l-round${roundNumber} .winner-container`
         )
       : document.querySelector(
-          `.leaderboard-content-talent .l-round${roundNumber} .winner-container`
+          `#${category}-${roundNumber} .winner-container`
         );
+        
+    console.log(winnerContainer);
   const winnerStripTemplate = document.querySelector("#winner-strip");
-  // const beanImg=document.querySelector(".bean-img");
+ 
   for (let i = 3; i < data.rows.length; i++) {
     const current = data.rows[i].c;
     // console.log(current);
@@ -553,9 +557,15 @@ async function renderLeaderboardData(data, name, roundNumber) {
 
 async function init() {
   const leaderboardData = await fetchSheetData("A34:C43");
-
-  console.log("------------", leaderboardData.table);
+  const leaderboardDataD1 = await fetchSheetData("A63:C64");
+  const leaderboardDataS1 = await fetchSheetData("A52:C60");
+  const leaderboardDataF1 = await fetchSheetData("A45:C50");
+  
   renderLeaderboardData(leaderboardData.table, "user", "1");
+  renderLeaderboardData(leaderboardDataF1.table,"talent",'1','fashion');
+  renderLeaderboardData(leaderboardDataS1.table,"talent",'1','singing');
+  renderLeaderboardData(leaderboardDataD1.table,"talent",'1','dancing');
+
 }
 
 init();
