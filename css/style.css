@@ -489,7 +489,7 @@ button {
 
 .leaderboard.active {
   background: url("../img/Leaderboard\ box.png") center/100% 100% no-repeat;
-  min-height: 88vh;
+  /* min-height: 88vh; */
   width: 100%;
   margin: auto;
   margin-top: 30px;
