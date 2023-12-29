@@ -1,14 +1,6 @@
 // Modal code.
 
-async function getUserImageUrl(userId) {
-  const res = await fetch(
-    `https://www.streamkarlive.live/meShow/entrance?parameter=%7B%22FuncTag%22:10005044,%22userId%22:${userId}%7D`
-  );
-  const data = await res.json();
-  if (data && data.portrait_path_original)
-    return data.portrait_path_original + "!256";
-  else return "";
-}
+
 
 const modal = document.getElementById("modal");
 
@@ -457,7 +449,16 @@ tabsL1.forEach((tab, i) => {
   });
 });
 
-
+// Get User 
+async function getUserImageUrl(userId) {
+  const res = await fetch(
+    `https://www.streamkarlive.live/meShow/entrance?parameter=%7B%22FuncTag%22:10005044,%22userId%22:${userId}%7D`
+  );
+  const data = await res.json();
+  if (data && data.portrait_path_original)
+    return data.portrait_path_original + "!256";
+  else return "";
+}
 
 
 
@@ -565,6 +566,7 @@ async function init() {
   renderLeaderboardData(leaderboardDataF1.table,"talent",'1','fashion');
   renderLeaderboardData(leaderboardDataS1.table,"talent",'1','singing');
   renderLeaderboardData(leaderboardDataD1.table,"talent",'1','dancing');
+
 
 }
 
